@@ -91,7 +91,7 @@ export default function HomePage() {
             title: <TitleStyle>price change</TitleStyle>,
             dataIndex: 'price_change',
             render: priceChange => <RowStyled
-                color={priceChange < 0 ? PRICE_DOWN : PRICE_UP}>{priceChange < 0 ? '' : '+'}{(priceChange).toFixed(2)}</RowStyled>,
+                color={priceChange < 0 ? PRICE_DOWN : PRICE_UP}>{priceChange < 0 ? '' : '+'}{priceChange===null ? priceChange : (priceChange).toFixed(2)}</RowStyled>,
             align: 'center',
             sorter: (a, b) => a.price - b.price
         },
